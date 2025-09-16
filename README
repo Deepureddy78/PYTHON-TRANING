@@ -1,0 +1,12 @@
+To create env folder:- python -m venv traning-python
+-->cd come to the env folder-->scripts-->dic-->Activate.ps1
+
+python traning recommened playlist:-  https://www.youtube.com/playlist?list=PLUl4u3cNGP62A-ynp6v6-LGBCzeH3VAQB
+
+to install extension:-pip install pandas[will get the latest version]
+to install extension with particular version :-pip install pandas == version
+pip list -- to see what lib are present
+
+or 
+
+create a file requirements.txt --> name all the needed lib(with version if needed)--> pip install -r requirments.txt
