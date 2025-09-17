@@ -16,14 +16,14 @@ def text_justifier():
     
     line = ""
     
-    for word in sentence:
-        if len(line) + len(word) + 1 <= width:
+    for char in sentence:
+        if len(line) + len(char) + 1 <= width:
             if line != "":
                 line += " "
-            line += word
+            line += char
         else:
             print(line)
-            line = word
+            line = char
     
     if line:
         print(line)

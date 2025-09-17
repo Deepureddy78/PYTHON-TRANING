@@ -1,3 +1,12 @@
+'''
+1. Word Frequency Counter (Dictionaries)
+Task: Count word occurrences in a paragraph.
+Input:
+"the cat sat on the mat with the other cat"
+Expected Output:
+{'the': 3, 'cat': 2, 'sat': 1, 'on': 1, 'mat': 1, 'with': 1, 'other': 1}
+'''
+
 def word_freq_counter():
     dict = {}
     sentence=input("Input: ").split()
@@ -14,3 +23,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

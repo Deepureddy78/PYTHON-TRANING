@@ -12,22 +12,13 @@ def repeat(func, times, value):
     return value
 
 def main():
-    # Get the lambda function as a string
     func_input = input("Enter a function (e.g., 'lambda x: x + 2'): ")
 
-    # Convert the input string into an actual function using eval
     func = eval(func_input)
-
-    # Get the number of times to apply the function
     times = int(input("Enter number of times to repeat the function: "))
-
-    # Get the initial value
     value = int(input("Enter the initial value: "))
-
-    # Call the repeat function
+    
     result = repeat(func, times, value)
-
-    # Show the result
     print("Result:", result)
 
 

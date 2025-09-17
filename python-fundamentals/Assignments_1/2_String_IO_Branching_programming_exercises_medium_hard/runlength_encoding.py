@@ -18,10 +18,8 @@ def runlength_encoding():
             check_list.append(char)
     return output
 
-
-
 def main():
     print("Encoded string:", runlength_encoding())
-    # runlength_encoding
+
 if __name__ == '__main__':
     main()

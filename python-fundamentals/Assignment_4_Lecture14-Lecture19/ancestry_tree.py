@@ -1,64 +1,41 @@
-def find_descendants(person, family):
-    """
-    Recursively find and print all descendants of a given person.
-    
-    Args:
-        person (str): The person whose descendants we want to find
-        family (dict): Nested dictionary representing the family tree
-    """
-    # Base case: if person not in family tree, return
-    if person not in family:
-        return
-    
-    # Get the children of the current person
-    children = family[person]
-    
-    # Print each child and recursively find their descendants
-    for child in children:
-        print(child)
-        # Recursive call to find descendants of this child
-        find_descendants(child, family)
+'''
+2. Ancestry Tree Traversal (Recursion on Non-numerics)
+Task: Given a nested family dictionary, print all descendants of a person.
+Input:
+family = {"John": {
+                "Alice": {
+                    "Sam": {},
+                    "Lily": {}
+                    },
+                    "Bob": {}
+                    }
+                }
+find_descendants("John", family)
+Expected Output:
+Alice
+Sam
+Lily
+Bob
+'''
 
-
-# Test with the provided example
 family = {
     "John": {
         "Alice": {
-            "Sam": {},
-            "Lily": {}
-        },
+            "Sam": {}, 
+            "Lily": {
+                "Karan": {}
+            }
+        }, 
         "Bob": {}
     }
 }
 
-print("Descendants of John:")
+def find_descendants(ancesstor, family, ancesstor_found=False):
+    for parent, desc in family.items():
+        true_ancesstor = True if parent == ancesstor else False
+        if parent != ancesstor and ancesstor_found:
+            print(parent)
+        find_descendants(ancesstor, desc, ancesstor_found or true_ancesstor)
+
+
 find_descendants("John", family)
-
-# Additional test cases
-print("\nDescendants of Alice:")
-find_descendants("Alice", family)
-
-print("\nDescendants of Sam (no descendants):")
-find_descendants("Sam", family)
-
-# Example with a more complex family tree
-extended_family = {
-    "John": {
-        "Alice": {
-            "Sam": {
-                "Emma": {},
-                "Jack": {}
-            },
-            "Lily": {
-                "Sophie": {}
-            }
-        },
-        "Bob": {
-            "Tom": {},
-            "Lisa": {}
-        }
-    }
-}
-
-print("\nExtended family - Descendants of John:")
-find_descendants("John", extended_family)
